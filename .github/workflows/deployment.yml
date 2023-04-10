@@ -51,7 +51,6 @@ jobs:
           source: "real_coding_server-0.0.1-SNAPSHOT.jar"
           target: "/home/djm07194"
           key: ${{ secrets.PRIVATE_KEY }}
-          password: "wjdtjrgh05"
   
   run-app:
     needs: send-jar
@@ -67,12 +66,10 @@ jobs:
           source: "deploy.sh"
           target: "/home/djm07194"
           key: ${{ secrets.PRIVATE_KEY }}
-          password: "wjdtjrgh05"
       - name: Execute script
         uses: appleboy/ssh-action@master
         with:
           username: djm07194
-          password: "wjdtjrgh05"
           host: 34.64.55.121
           key: ${{ secrets.PRIVATE_KEY }}
           script_stop: true
